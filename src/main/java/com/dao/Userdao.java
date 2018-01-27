@@ -21,4 +21,5 @@ public interface Userdao {
     public  void deleteuser(int uid);
     //@Select("select * from user limit #{ben},#{end} ")
     public List<User> selectfenyt(Page page);
+    //啊啊啊
 }
