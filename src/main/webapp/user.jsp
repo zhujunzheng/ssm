@@ -16,40 +16,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/font-awesome.min.css" />
 
     <!-- page specific plugin styles -->
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="assets/css/datepicker.css" />
-    <link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/datepicker.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ui.jqgrid.css" />
 
     <!-- text fonts -->
-    <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-fonts.css" />
 
     <!-- ace styles -->
-    <link rel="stylesheet" href="assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace.min.css" id="main-ace-style" />
 
     <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-part2.min.css" />
     <![endif]-->
-    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-rtl.min.css" />
 
     <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-ie.min.css" />
     <![endif]-->
 
     <!-- inline styles related to this page -->
 
     <!-- ace settings handler -->
-    <script src="assets/js/ace-extra.min.js"></script>
+    <script src="bootstrap/assets/js/ace-extra.min.js"></script>
 
     <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
     <!--[if lte IE 8]>
-    <script src="assets/js/html5shiv.min.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="bootstrap/assets/js/html5shiv.min.js"></script>
+    <script src="bootstrap/assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -669,29 +669,29 @@
 
 <!--[if !IE]> -->
 <script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+    window.jQuery || document.write("<script src='bootstrap/assets/js/jquery.min.js'>"+"<"+"/script>");
 </script>
 
 <!-- <![endif]-->
 
 <!--[if IE]>
 <script type="text/javascript">
-    window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+    window.jQuery || document.write("<script src='bootstrap/assets/js/jquery1x.min.js'>"+"<"+"/script>");
 </script>
 <![endif]-->
 <script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    if('ontouchstart' in document.documentElement) document.write("<script src='bootstrap/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
 <script src="assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
-<script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
-<script src="assets/js/jqGrid/jquery.jqGrid.min.js"></script>
-<script src="assets/js/jqGrid/i18n/grid.locale-en.js"></script>
+<script src="bootstrap/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="bootstrap/assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+<script src="bootstrap/assets/js/jqGrid/i18n/grid.locale-en.js"></script>
 
 <!-- ace scripts -->
-<script src="assets/js/ace-elements.min.js"></script>
-<script src="assets/js/ace.min.js"></script>
+<script src="bootstrap/assets/js/ace-elements.min.js"></script>
+<script src="bootstrap/assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
