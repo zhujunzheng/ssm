@@ -1,310 +1,287 @@
 <%--
   Created by IntelliJ IDEA.
-  User: zjz
-  Date: 2018/1/15
-  Time: 17:51
+  User: TW
+  Date: 2018/1/26
+  Time: 14:50
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>bootstrap</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <!-- 引入bootstrap-table样式 -->
-    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- jquery -->
-    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- basic styles -->
 
-    <!-- bootstrap-table.min.js -->
-    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-    <!-- 引入中文语言包 -->
-    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <link href="bootstrap/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap/assets/css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="bootstrap/assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="bootstrap/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="bootstrap/assets/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+
+    <script src="bootstrap/assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="bootstrap/assets/js/html5shiv.js"></script>
+    <script src="bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
 
 
+    <!--[if !IE]> -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <![endif]-->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='bootstrap/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='bootstrap/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.addtabs.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.addtabs.min.js"></script>
 
 
 </head>
+
 <body>
+<div class="navbar navbar-default" id="navbar" style="background:#2F2E2E;">
+    <script type="text/javascript">
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    </script>
 
-<div style="width: 100%;height:100px;background:url(image/bg_header.jpg) bottom repeat-x;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+    <div class="navbar-container" id="navbar-container" >
+        <div class="navbar-header pull-left" >
+            <a href="#" class="navbar-brand">
+                <small>
+                    <i class="icon-leaf"></i>
+                    壹米滴答
+                </small>
+            </a><!-- /.brand -->
+        </div><!-- /.navbar-header -->
 
-    <div class="col-xs-6 col-sm-6" >
-        <h2 style="color: white;">Bootstrap Web Admin</h2>
-    </div>
-    <div class="col-xs-6 col-sm-6" >
-        <h3 style="text-align: right;color: white;">admin,欢迎您!</h3>
-        <div  style="text-align: right;color: white;">
-            <a>网站首页</a>|<a>支持论坛</a>|<a>帮助中心</a>|<a>安全退出</a>
-        </div>
-    </div>
+        <div class="navbar-header pull-right" role="navigation" >
+            <ul class="nav ace-nav">
 
-</div>
+                <li >
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle" style="background-color: #FFB200;">
+                        <img class="nav-user-photo" src="bootstrap/assets/avatars/user.jpg" alt="Jason's Photo" />
+                        <span class="user-info">
+									<small>Welcome,</small>
+									admin
+								</span>
 
-<div style="width: 100%;height:560px;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-    <div class="panel-group col-xs-6" id="accordion"  style="height: 100%;width: 20%;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseOne">
-                        快捷管理
+                        <i class="icon-caret-down"></i>
                     </a>
-                </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="tree well" >
-                    <ul>
-                        <li onclick="add('菜单导航','home')">
-                            <span><i></i> 菜单导航</span>
+
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#">
+                                <i class="icon-cog"></i>
+                                设置
+                            </a>
                         </li>
-                        <li onclick="add('用户管理','ios')">
-                            <span><i ></i> 用户管理</span> <a href=""></a>
 
-                        </li >
-                        <li onclick="add('角色管理','jmeter')">
-                            <span><i ></i> 角色管理</span> <a href=""></a>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>
+                                去登录
+                            </a>
+                        </li>
 
-                        </li >
-                        <li onclick="add('数据字典','ejb')">
-                            <span><i ></i> 数据字典</span> <a href=""></a>
+                        <li class="divider"></li>
 
+                        <li>
+                            <a href="#">
+                                <i class="icon-off"></i>
+                                安全退出
+                            </a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseTwo">
-                        数据管理
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                    vice lomo.
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" >
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion"
-                       href="#collapseThree">
-                        财务管理
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                    vice lomo.
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-6" style="width: 80%;">
-        <ul id="myTab" class="nav nav-tabs">
-            <li class="active">
-                <a href="#home" data-toggle="tab">
-                    首页
-                </a>
+                </li>
+            </ul><!-- /.ace-nav -->
+        </div><!-- /.navbar-header -->
+    </div><!-- /.container -->
+</div>
 
-            </li>
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
 
-        </ul>
-        <div id="myTabContent" class="tab-content">
-            <div class="table-responsive">
-                <div class="tab-pane fade in active  " id="home">
-                    <div class="panel-body" style="padding-bottom:0px;">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">查询条件</div>
-                            <div class="panel-body">
-                                <form id="formSearch" class="form-horizontal">
-                                    <div class="form-group" style="margin-top:15px">
-                                        <label class="control-label col-sm-1" for="txt_search_departmentname">部门名称</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" class="form-control" id="txt_search_departmentname">
-                                        </div>
-                                        <label class="control-label col-sm-1" for="txt_search_statu">状态</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" class="form-control" id="txt_search_statu">
-                                        </div>
-                                        <div class="col-sm-4" style="text-align:left;">
-                                            <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
-                                        </div>
-                                    </div>
-                                </form>
+    <div class="main-container-inner">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+
+        <div class="sidebar" id="sidebar">
+            <script type="text/javascript">
+                try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+            </script>
+
+
+            <ul class="nav nav-list">
+                <li class="active">
+                    <a data-addtab="mail" data-url="index.jsp">
+                        <i class="icon-dashboard"></i>
+                        <span class="menu-text"> 异常管理 </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="typography.html">
+                        <i class="icon-text-width"></i>
+                        <span class="menu-text"> 差错管理 </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-desktop"></i>
+                        <span class="menu-text"> 仲裁管理 </span>
+
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-list"></i>
+                        <span class="menu-text"> 理赔管理 </span>
+
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="dropdown-toggle">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">弃货</span>
+
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="widgets.html">
+                        <i class="icon-list-alt"></i>
+                        <span class="menu-text">差错分析 </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="widgets.html">
+                        <i class="icon-list-alt"></i>
+                        <span class="menu-text">奖惩管理</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        <i class="icon-picture"></i>
+                        <span class="menu-text"> 综合功能</span>
+                    </a>
+                </li>
+
+            </ul><!-- /.nav-list -->
+
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+            </div>
+
+            <script type="text/javascript">
+                try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+            </script>
+        </div>
+
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" id="tabs1" role="tablist">
+                                <li class="active" role="presentation">
+                                    <a aria-controls="home" data-toggle="tab" href="#home" role="tab">
+                                        Home
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home" role="tabpanel">
+                                    I'm a shouye.
+                                </div>
                             </div>
                         </div>
 
-                        <div id="toolbar" class="btn-group">
-                            <button id="btn_add" type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
-                            </button>
-                            <button id="btn_edit" type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
-                            </button>
-                            <button id="btn_delete" type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
-                            </button>
-                        </div>
-                        <table id="tb_departments"></table>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="ios">
-                    <p>iOS is a mobile operating system developed and distributed by Apple
-                        Inc. Originally released in 2007 for the iPhone, iPod Touch, and
-                        Apple TV. iOS is derived from OS X, with which it shares the
-                        Darwin foundation. iOS is Apple's mobile version of the
-                        OS X operating system used on Apple computers.</p>
-                </div>
-                <div class="tab-pane fade" id="jmeter">
-                    <p>jMeter is an Open Source testing software. It is 100% pure
-                        Java application for load and performance testing.</p>
-                </div>
-                <div class="tab-pane fade" id="ejb">
-                    <p>Enterprise Java Beans (EJB) is a development architecture
-                        for building highly scalable and robust enterprise level
-                        applications to be deployed on J2EE compliant
-                        Application Server such as JBOSS, Web Logic etc.
-                    </p>
-                </div>
-            </div>
-        </div>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div><!-- /.main-content -->
 
-    </div>
-    <div data-options="region:'south',split:true" style="height:20px;text-align: center;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;float: left;width: 100%;">
-        &copy; 2013 Wu All Rights Reserved
+    </div><!-- /.main-container-inner -->
 
-    </div>
+</div><!-- /.main-container -->
 
+<!-- basic scripts -->
 
-</div>
-
-<script type="javascript" >
-
-    $(function(){
-
-        $(".form_datetime").datetimepicker({
-            format: "yyyy-mm-dd",
-            autoclose: true,
-            todayBtn: true,
-            todayHighlight: true,
-            showMeridian: true,
-            pickerPosition: "bottom-left",
-            language: 'zh-CN',//中文，需要引用zh-CN.js包
-            startView: 2,//月视图
-            minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
-        });
-
-
-        var oTable = new TableInit();
-        oTable.Init();
-
-
-
-
-
-    });
-
-    var TableInit = function () {
-        var oTableInit = new Object();
-        //初始化Table
-        oTableInit.Init = function () {
-            $('#tb_departments').bootstrapTable({
-                url: '/user/getallJSON.action',         //请求后台的URL（*）
-                method: 'post',                      //请求方式（*）
-                toolbar: '#toolbar',                //工具按钮用哪个容器
-                striped: true,                      //是否显示行间隔色
-                cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-                pagination: true,                   //是否显示分页（*）
-                sortable: false,                     //是否启用排序
-                sortOrder: "asc",                   //排序方式
-                queryParams: oTableInit.queryParams,//传递参数（*）
-                sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
-                pageNumber: 1,                       //初始化加载第一页，默认第一页
-                pageSize: 10,                       //每页的记录行数（*）
-                pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
-                search: true,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-                strictSearch: true,
-                showColumns: true,                  //是否显示所有的列
-                showRefresh: true,                  //是否显示刷新按钮
-                minimumCountColumns: 2,             //最少允许的列数
-                clickToSelect: true,                //是否启用点击选中行
-                height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-                uniqueId: "uid",                     //每一行的唯一标识，一般为主键列
-                showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
-                cardView: false,                    //是否显示详细视图
-                detailView: false,                   //是否显示父子表
-                columns: [{
-                    checkbox: true
-                }, {
-                    field: 'uid',
-                    title: '编号'
-                }, {
-                    field: 'uname',
-                    title: '用户名'
-                }]
-            });
-        };
-
-
-        //得到查询的参数
-        oTableInit.queryParams = function (params) {
-            var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-                limit: params.limit,   //页面大小
-                offset: params.offset,  //页码
-                departmentname: $("#txt_search_departmentname").val(),
-                statu: $("#txt_search_statu").val()
-            };
-            return temp;
-        };
-        return oTableInit;
-    }
-
-
-
-    //添加选项卡
-    function add(text,href){
-
-        //拿到选项卡下所有节点
-        var children= $('#myTab').children();
-
-
-        var flag = true ;
-        for(var j = 0 ; j < children.length;j++){
-            if(children[j].innerHTML.indexOf(text)>=0){
-                flag =  false ;
-                break ;
-            }
-        }
-        //如果存在打开，不存在添加
-        if(flag){
-            $("#myTab").html($("#myTab").html()+"<li ><a href='#"+href+"' data-toggle='tab'>"+text+" <span onclick='deleteLi(this)'>x</span></a></li>")
-        }else{
-            for(var j = 0 ; j < children.length;j++){
-                children[j].className = '' ;
-                if(children[j].innerHTML.indexOf(text)>=0){
-                    children[j].className = 'active';
-                }
-            }
-        }
-
-    }
-
-
-
-
+<script type="text/javascript">
+    if("ontouchend" in document) document.write("<script src='bootstrap/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
+<script src="bootstrap/assets/js/bootstrap.min.js"></script>
+<script src="bootstrap/assets/js/typeahead.jquery.min.js"></script>
+<%--<script src="bootstrap/assets/js/typeahead-bs2.min.js"></script>--%>
 
+<!-- page specific plugin scripts -->
+
+<!-- ace scripts -->
+
+<script src="bootstrap/assets/js/ace-elements.min.js"></script>
+<script src="bootstrap/assets/js/ace.min.js"></script>
+
+<!-- inline scripts related to this page -->
 </body>
 </html>
