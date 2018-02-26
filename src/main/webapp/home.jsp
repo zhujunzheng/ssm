@@ -62,20 +62,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <![endif]-->
 
-    <!--[if !IE]> -->
-
-    <script type="text/javascript">
-        window.jQuery || document.write("<script src='bootstrap/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
-    </script>
-
-    <!-- <![endif]-->
-
-    <!--[if IE]>
-    <script type="text/javascript">
-        window.jQuery || document.write("<script src='bootstrap/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-    </script>
-    <![endif]-->
-
+    <script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.addtabs.css" type="text/css" media="screen" />
     <script type="text/javascript" src="bootstrap/js/bootstrap.addtabs.min.js"></script>
