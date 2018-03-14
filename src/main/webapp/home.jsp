@@ -149,8 +149,7 @@
             <ul class="nav nav-list">
                 <li class="active">
                     <a data-addtab="mail" data-url="index.jsp">
-                        <i class="icon-dashboard"></i>
-                        <span class="menu-text"> 异常管理 </span>
+                        <span class="menu-text"><a href="chacuo.jsp"/>异常管理</span>
                     </a>
                 </li>
 
@@ -227,7 +226,6 @@
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
                         <div>
-                            <!-- Nav tabs -->
                             <ul class="nav nav-tabs" id="tabs1" role="tablist">
                                 <li class="active" role="presentation">
                                     <a aria-controls="home" data-toggle="tab" href="#home" role="tab">

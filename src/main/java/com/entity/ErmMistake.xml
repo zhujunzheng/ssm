@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ErmMistakeDao">
+
+
+    <select id="selsctErmMistake" resultType="com.entity.ErmMistake">
+        SELECT * FROM qc_erm_mistake m
+        <where>
+            <if test="waybill_no != null and waybill_no !=''">
+                AND m.waybill_no = '${waybill_no}'
+            </if>
+            <if test="code != null and code !=''">
+                AND m.code LIKE '%${code}%'
+            </if>
+            <if test="type != null and type !=0">
+                AND m.type = #{type}
+            </if>
+            <if test="report_start_time != null and report_start_time != '' and report_end_time != null and report_end_time !=''">
+                AND report_time BETWEEN #{report_start_time} and #{report_end_time}
+            </if>
+        </where>
+    </select>
+
+    <!--<select id="i"></select>-->
+
+
+</mapper>

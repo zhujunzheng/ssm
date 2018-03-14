@@ -28,23 +28,15 @@
 
 
 
-	<bean id="userdao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
-		<property name="sqlSessionFactory" ref="sqlsessionFactory"></property>
-		<property name="mapperInterface" value="com.dao.Userdao"></property>
-	</bean>
+	<!--<bean id="userdao" class="org.mybatis.spring.mapper.MapperFactoryBean" >-->
+		<!--<property name="sqlSessionFactory" ref="sqlsessionFactory"></property>-->
+		<!--<property name="mapperInterface" value="com.dao.Userdao"></property>-->
+	<!--</bean>-->
 
 
-<!--
 	<bean id="scannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.dao"></property>
 	</bean>
--->
-
-
-
-
-
-
 
 
 

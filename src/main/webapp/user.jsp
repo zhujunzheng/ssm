@@ -244,7 +244,7 @@
                             <ul class="dropdown-menu dropdown-navbar">
                                 <li>
                                     <a href="#">
-                                        <img src="assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                        <img src="bootstrap/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
                                         <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -261,7 +261,7 @@
 
                                 <li>
                                     <a href="#">
-                                        <img src="assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                        <img src="bootstrap/assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
                                         <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -278,7 +278,7 @@
 
                                 <li>
                                     <a href="#">
-                                        <img src="assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                        <img src="bootstrap/assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
                                         <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -295,7 +295,7 @@
 
                                 <li>
                                     <a href="#">
-                                        <img src="assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                        <img src="bootstrap/assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
                                         <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -312,7 +312,7 @@
 
                                 <li>
                                     <a href="#">
-                                        <img src="assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                        <img src="bootstrap/assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
                                         <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -341,7 +341,7 @@
                 <!-- #section:basics/navbar.user_menu -->
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+                        <img class="nav-user-photo" src="bootstrap/assets/avatars/user.jpg" alt="Jason's Photo" />
                         <span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -682,7 +682,7 @@
 <script type="text/javascript">
     if('ontouchstart' in document.documentElement) document.write("<script src='bootstrap/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="bootstrap/assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
 <script src="bootstrap/assets/js/date-time/bootstrap-datepicker.min.js"></script>
@@ -1009,12 +1009,12 @@
 </script>
 
 <!-- the following scripts are used in demo only for onpage help and you don't need them -->
-<link rel="stylesheet" href="assets/css/ace.onpage-help.css" />
+<link rel="stylesheet" href="bootstrap/assets/css/ace.onpage-help.css" />
 <link rel="stylesheet" href="docs/assets/js/themes/sunburst.css" />
 
 <script type="text/javascript"> ace.vars['base'] = '..'; </script>
-<script src="assets/js/ace/elements.onpage-help.js"></script>
-<script src="assets/js/ace/ace.onpage-help.js"></script>
+<script src="bootstrap/assets/js/ace/elements.onpage-help.js"></script>
+<script src="bootstrap/assets/js/ace/ace.onpage-help.js"></script>
 <script src="docs/assets/js/rainbow.js"></script>
 <script src="docs/assets/js/language/generic.js"></script>
 <script src="docs/assets/js/language/html.js"></script>
