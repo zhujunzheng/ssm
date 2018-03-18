@@ -38,4 +38,17 @@ public class ErmMistakeController {
     }
 
 
+    /**
+     * 根据id获得详细信息
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "getErmMistakeById")
+    public ErmMistake getErmMistakeById(Integer id) {
+        ErmMistake ermMistake = ermMistakeDao.getErmMistakeById(id);
+
+
+        return ermMistake;
+    }
 }

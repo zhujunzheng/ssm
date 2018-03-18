@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../MongoDBDemo/MongoDBDemo.iml" filepath="$PROJECT_DIR$/../../MongoDBDemo/MongoDBDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../MongoDBDemo/Redis.iml" filepath="$PROJECT_DIR$/../../MongoDBDemo/Redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../RedisDemo/RedisDemo.iml" filepath="$PROJECT_DIR$/../../RedisDemo/RedisDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSM.iml" filepath="$PROJECT_DIR$/SSM.iml" />
+    </modules>
+  </component>
+</project>

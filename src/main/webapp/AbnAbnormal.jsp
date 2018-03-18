@@ -11,10 +11,21 @@
 <head>
     <title>abnabnormal差错申诉</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .tableContent tbody tr label{
+            margin-left:30px;
+            margin-top: 20px;
+        }
+
+    </style>
 
     <link href="bootstrap/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- 引入bootstrap-table样式 -->
     <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <!-- 引入模态框样式-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <!-- jquery -->
     <script src="bootstrap/assets/js/jquery.min.js"></script>
@@ -89,12 +100,48 @@
     <script src="bootstrap/assets/js/html5shiv.js"></script>
     <script src="bootstrap/assets/js/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript" src="bootstrap/js/vue.min.js"></script>
+
 </head>
 
 
 <script type="text/javascript">
 
     $(function () {
+
+
+        var vue = new Vue({
+            el:"#xiangxi",
+            data:{
+                ermMistake:"",
+                id:""
+            },
+            methods:{
+                getErmMistakeById:function () {
+                    var _this = this ;
+                    $.ajax({
+                        url:"/getErmMistakeById.action",
+                        data:{id:_this.id},
+                        dataType:"JSON",
+                        success:function (result) {
+                            _this.ermMistake =result;
+                        }
+                    });
+                }
+            },
+            created:function () {
+                if (this.id != "") {
+                    this.getErmMistakeById() ;
+                }else{
+
+                }
+            }
+
+
+        });
+
+
         $("#jettison").jqGrid({
             url: '/getAll.action',
             datatype: "json",
@@ -130,9 +177,16 @@
                 }, 0);
             },
             // caption: "| 查询结果",
-            autowidth: true
+            autowidth: true,
+            onSelectRow:function (rowId ,status) {
+                if (status) {
+                    vue.id = rowId ;
+                    vue.getErmMistakeById();
+                }
+            },
 
         });
+
 
 
     });
@@ -160,8 +214,10 @@
 <body>
 
 <div class="panel-body" style="padding-bottom:0px; margin: 5px;">
-    <button class="btn btn-success" style="margin: 8px" onclick="resigter()">差错申诉处理</button>
-    <button class="btn btn-success" style="margin: 8px" onclick="update()">申诉审核</button>
+    <button class="btn btn-success" style="margin: 8px" data-toggle="modal" data-target="#myModal">申诉</button>
+    <button class="btn btn-success" style="margin: 8px" onclick="update()">转仲裁</button>
+    <button class="btn btn-success" style="margin: 8px" onclick="update()">转理赔</button>
+
 
 
     <ul id="myTab" class="nav nav-tabs">
@@ -176,7 +232,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">| 查询条件</div>
                 <div class="panel-body">
-                    <form id="formSearch" class="form-horizontal" >
+                    <form id="formSearch" class="form-horizontal">
                         <div class="form-group" style="margin-top:15px">
 
                             <div class="row" class="col-xs-12 col-sm-4">
@@ -191,13 +247,13 @@
 
                             <div class="row" class="col-xs-12 col-sm-4" style="margin-top:15px">
                                 <div>
-                                <label style="margin-left:30px">上报日期
-                                    <input class="demo-input" id="beginTime" name="beginTime" type="text"
-                                           placeholder="请选择日期"/>
-                                    <label>至</label>
-                                    <input class="demo-input" id="endTime" name="endTime" type="text"
-                                           placeholder="请选择日期"/>
-                                </label>
+                                    <label style="margin-left:30px">上报日期
+                                        <input class="demo-input" id="beginTime" name="beginTime" type="text"
+                                               placeholder="请选择日期"/>
+                                        <label>至</label>
+                                        <input class="demo-input" id="endTime" name="endTime" type="text"
+                                               placeholder="请选择日期"/>
+                                    </label>
                                 </div>
 
                                 <label style="margin-left:30px">差错单号
@@ -205,7 +261,7 @@
                                 </label>
 
                                 <label style="margin-left:30px">差错类型
-                                    <select style="width: 170px" name="type" >
+                                    <select style="width: 170px" name="type">
                                         <option value="0">请选择</option>
                                         <option value="1">运单录入不规范</option>
                                         <option value="2">签收录入不规范</option>
@@ -228,70 +284,244 @@
             </div>
         </div>
         <div class="tab-pane fade" id="xiangxi">
-            详细信息
+            <div class="panel panel-default">
+                <div class="panel-heading">| 详细信息</div>
+                <div class="panel-body">
+
+
+                    <table class="tableContent">
+                        <tr style="padding-top: 10px;">
+                            <td>
+                                <label>差错单号
+                                    <input type="text" name="code" v-bind:value="ermMistake.code" readonly/>
+                                </label>
+                            </td>
+                            <td>
+                                <label>受理时间
+                                    <input type="text" name="code" v-bind:value="ermMistake.accept_time" readonly/>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>上报部门编码
+                                    <input type="text" name="code" v-bind:value="ermMistake.report_department_code"readonly/>
+                                </label>
+                            </td>
+                            <td>
+                                <label style="margin-left:30px">上报部门
+                                    <input type="text" name="code" v-bind:value="ermMistake.report_department" readonly/>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">上报企业编码
+                                <input type="text" name="code" v-bind:value="ermMistake.report_company_code" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">上报企业
+                                <input type="text" name="code" v-bind:value="ermMistake.report_company" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">上报省区编码
+                                <input type="text" name="code" v-bind:value="ermMistake.report_province_code" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">上报省区
+                                <input type="text" name="code" v-bind:value="ermMistake.report_province" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">上报时间
+                                <input type="text" name="code" v-bind:value="ermMistake.report_time" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">上报内容
+                                <input type="text" name="code" v-bind:value="ermMistake.report_content" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="margin-left:30px">处理状态
+                                <input type="text" name="code" v-bind:value="ermMistake.dispose_status" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">异常件数
+                                <input type="text" name="code" v-bind:value="ermMistake.question_quantity" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">托寄物
+                                <input type="text" name="code" v-bind:value="ermMistake.goods_name" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">重量
+                                <input type="text" name="code" v-bind:value="ermMistake.weight" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">包装方式
+                                <input type="text" name="code" v-bind:value="ermMistake.package_type" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">服务方式
+                                <input type="text" name="code" v-bind:value="ermMistake.package_type" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">签收状态
+                                <input type="text" name="code" v-bind:value="ermMistake.sign_type" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">运单号
+                                <input type="text" name="code" v-bind:value="ermMistake.waybill_no" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            <label style="margin-left:30px">问题件编码
+                                <input type="text" name="code" v-bind:value="ermMistake.abnormal_code" readonly/>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="margin-left:30px">差错类型
+                                <input type="text" name="code" v-bind:value="ermMistake.type" readonly/>
+                            </label>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td>
+                                <label style="margin-left:30px">差错编号
+                                    <input type="text" name="code" v-bind:value="ermMistake.abnormal_code" readonly/>
+                                </label>
+                            </td>
+                            <td>
+                                <label style="margin-left:30px">组织类型
+                                    <input type="text" name="code" v-bind:value="ermMistake.org_type" readonly/>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label style="margin-left:30px">公司code
+                                    <input type="text" name="code" v-bind:value="ermMistake.comp_code" readonly/>
+                                </label>
+                            </td>
+                            <td>
+                                <label style="margin-left:30px">创建人
+                                    <input type="text" name="code" v-bind:value="ermMistake.creater" readonly/>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label style="margin-left:30px">创建时间
+                                    <input type="text" name="code" v-bind:value="ermMistake.create_time" readonly/>
+                                </label>
+                            </td>
+                            <td>
+                                <label style="margin-left:30px">修改人
+                                    <input type="text" name="code" v-bind:value="ermMistake.modifier" readonly/>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label style="margin-left:30px">修改时间
+                                    <input type="text" name="code" v-bind:value="ermMistake.modifier_time" readonly/>
+                                </label>
+                            </td>
+
+
+                    </table>
+
+                </div>
+                </div>
+            </div>
+
         </div>
+
+        <script type="text/javascript">
+
+            $(function () {
+
+
+
+                $("#btn_query").click(function () {
+                    var form = $("#formSearch").serialize();
+                    console.info(form);
+                    $("#jettison").jqGrid("setGridParam", {
+                        url: '/getAll.action',
+                        dataType: "json",
+                        postData: form,
+                        page: 1
+                    }).trigger("reloadGrid");
+
+                });
+
+
+                //获取当前时间
+                var toDay = new Date();
+
+                $('#beginTime').datetimepicker({
+                    format: 'yyyy-mm-dd',//格式化时间
+                    minView: 2,  //最精确时间
+                    autoclose: true,
+                    todayBtn: true,
+                    language: 'zh-CN',
+                    endDate: toDay  //这个时间后面的都不能进行选择
+                }).on("change", function () {
+                    //获取当前选择的时间
+                    var date = new Date($('#beginTime').val());
+                    //设置结束时间的可选起始时间为起始时间以及之后
+                    $('#endTime').datetimepicker("setStartDate", date);
+                });
+
+
+                $('#endTime').datetimepicker({
+                    format: 'yyyy-mm-dd',//格式化时间
+                    minView: 2,  //最精确时间
+                    autoclose: true,  //选择后自动关闭
+                    todayBtn: true,   //显示today按钮
+                    language: 'zh-CN',
+                    startDate: toDay,
+                    endDate: toDay
+                }).on("change", function () {
+                    //设置起始时间的最大可选时间为结束时间
+                    $('#beginTime').datetimepicker("setEndDate", $('#endTime').val());
+                });
+
+
+
+
+            });
+
+        </script>
+
+
     </div>
-
-
 </div>
-
-<script type="text/javascript">
-
-    $(function () {
-
-        $("#btn_query").click(function () {
-            var form = $("#formSearch").serialize();
-            console.info(form);
-            $("#jettison").jqGrid("setGridParam",{
-                url: '/getAll.action',
-                dataType: "json",
-                postData:form,
-                page : 1
-        }).trigger("reloadGrid");
-
-        });
-
-
-
-        //获取当前时间
-        var toDay = new Date();
-
-        $('#beginTime').datetimepicker({
-            format: 'yyyy-mm-dd',//格式化时间
-            minView:2,  //最精确时间
-            autoclose:true,
-            todayBtn:true,
-            language: 'zh-CN',
-            endDate:toDay  //这个时间后面的都不能进行选择
-        }).on("change",function () {
-            //获取当前选择的时间
-            var date = new Date($('#beginTime').val()) ;
-            //设置结束时间的可选起始时间为起始时间以及之后
-            $('#endTime').datetimepicker("setStartDate",date);
-        });
-
-
-
-        $('#endTime').datetimepicker({
-            format: 'yyyy-mm-dd',//格式化时间
-            minView:2,  //最精确时间
-            autoclose:true,  //选择后自动关闭
-            todayBtn:true,   //显示today按钮
-            language: 'zh-CN',
-            startDate:toDay,
-            endDate:toDay
-        }).on("change",function () {
-            //设置起始时间的最大可选时间为结束时间
-            $('#beginTime').datetimepicker("setEndDate",$('#endTime').val());
-        });
-
-
-
-    });
-
-</script>
-
-
 </body>
 
 

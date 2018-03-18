@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 public class ErmMistake {
 
   private long mistake_id;
-  private java.sql.Timestamp accept_time;
+  private String accept_time;
   private String report_department_code;
   private String report_department;
   private String report_company_code;
@@ -17,7 +17,7 @@ public class ErmMistake {
   private String report_province_code;
   private String report_province;
   private String report_content;
-  private java.sql.Timestamp report_time;
+  private String report_time;
   private long dispose_status;
   private long question_quantity;
   private long quantity;
@@ -33,11 +33,11 @@ public class ErmMistake {
   private String comp_code;
   private String org_type;
   private String creater;
-  private java.sql.Timestamp create_time;
+  private String create_time;
   private String modifier;
-  private java.sql.Timestamp modifier_time;
+  private String modifier_time;
   private long is_delete;
-  private java.sql.Timestamp latest_time;
+  private String latest_time;
   private double record_version;
 
   public long getMistake_id() {
@@ -48,11 +48,11 @@ public class ErmMistake {
     this.mistake_id = mistake_id;
   }
 
-  public Timestamp getAccept_time() {
+  public String getAccept_time() {
     return accept_time;
   }
 
-  public void setAccept_time(Timestamp accept_time) {
+  public void setAccept_time(String accept_time) {
     this.accept_time = accept_time;
   }
 
@@ -112,11 +112,11 @@ public class ErmMistake {
     this.report_content = report_content;
   }
 
-  public Timestamp getReport_time() {
+  public String getReport_time() {
     return report_time;
   }
 
-  public void setReport_time(Timestamp report_time) {
+  public void setReport_time(String report_time) {
     this.report_time = report_time;
   }
 
@@ -240,11 +240,11 @@ public class ErmMistake {
     this.creater = creater;
   }
 
-  public Timestamp getCreate_time() {
+  public String getCreate_time() {
     return create_time;
   }
 
-  public void setCreate_time(Timestamp create_time) {
+  public void setCreate_time(String create_time) {
     this.create_time = create_time;
   }
 
@@ -256,11 +256,11 @@ public class ErmMistake {
     this.modifier = modifier;
   }
 
-  public Timestamp getModifier_time() {
+  public String getModifier_time() {
     return modifier_time;
   }
 
-  public void setModifier_time(Timestamp modifier_time) {
+  public void setModifier_time(String modifier_time) {
     this.modifier_time = modifier_time;
   }
 
@@ -272,11 +272,11 @@ public class ErmMistake {
     this.is_delete = is_delete;
   }
 
-  public Timestamp getLatest_time() {
+  public String getLatest_time() {
     return latest_time;
   }
 
-  public void setLatest_time(Timestamp latest_time) {
+  public void setLatest_time(String latest_time) {
     this.latest_time = latest_time;
   }
 
@@ -288,7 +288,7 @@ public class ErmMistake {
     this.record_version = record_version;
   }
 
-  public ErmMistake(long mistake_id, Timestamp accept_time, String report_department_code, String report_department, String report_company_code, String report_company, String report_province_code, String report_province, String report_content, Timestamp report_time, long dispose_status, long question_quantity, long quantity, double weight, String goods_name, long package_type, long service_type, long sign_type, String waybill_no, String abnormal_code, long type, String code, String comp_code, String org_type, String creater, Timestamp create_time, String modifier, Timestamp modifier_time, long is_delete, Timestamp latest_time, double record_version) {
+  public ErmMistake(long mistake_id, String accept_time, String report_department_code, String report_department, String report_company_code, String report_company, String report_province_code, String report_province, String report_content, String report_time, long dispose_status, long question_quantity, long quantity, double weight, String goods_name, long package_type, long service_type, long sign_type, String waybill_no, String abnormal_code, long type, String code, String comp_code, String org_type, String creater, String create_time, String modifier, String modifier_time, long is_delete, String latest_time, double record_version) {
     this.mistake_id = mistake_id;
     this.accept_time = accept_time;
     this.report_department_code = report_department_code;

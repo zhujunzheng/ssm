@@ -23,7 +23,11 @@
         </where>
     </select>
 
-    <!--<select id="i"></select>-->
+    <select id="getErmMistakeById" resultType="com.entity.ErmMistake">
+        SELECT * FROM qc_erm_mistake m WHERE mistake_id=#{mistake_id}
+
+    </select>
+
 
 
 </mapper>
