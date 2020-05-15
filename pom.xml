@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <jackson>2.9.9</jackson>
+    <jackson>2.11.0</jackson>
   </properties>
 
   <dependencies>
